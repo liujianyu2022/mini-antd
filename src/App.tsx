@@ -6,9 +6,11 @@ function App() {
   
   return (
     <div className="App">
-      <Button>你好1</Button>
+      <Button btnType={ButtonType.Default} autoFocus>你好1</Button>
       <Button btnType={ButtonType.Primary} disabled>你好2</Button>
-      <Button btnType={ButtonType.Link} size={ButtonSize.large} href="6666666">你好3</Button>
+      <Button btnType={ButtonType.Link} size={ButtonSize.Large} href="www.baidu.com" target="_blank">你好3</Button>
+      <Button btnType={ButtonType.Link} href="6666666" disabled>你好3</Button>
+      <Button btnType={ButtonType.Danger} size={ButtonSize.Small} >你好4</Button>
     </div>
   );
 }

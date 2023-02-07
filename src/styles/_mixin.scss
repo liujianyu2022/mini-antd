@@ -1,0 +1,35 @@
+@mixin button-size($padding-x, $padding-y, $font-size, $border-radius) {
+    padding: $padding-y, $padding-x; // 注意 padding 上下  左右
+    font-size: $font-size;
+    border-radius: $border-radius;
+}
+
+@mixin button-style($background,
+    $border,
+    $color,
+    $hover-background: lighten($background, 10%),
+    $hover-border: lighten($border, 15%),
+    $hover-color: $color
+) {
+    color: $color;
+    background: $background;
+    border-color: $border;
+
+    & :hover {
+        color: $hover-color;
+        background: $hover-background;
+        border-color: $hover-border
+    }
+
+    & :focus, &.focus{     // focus这个状态和focus这个类
+        color: $hover-color;
+        background: $hover-background;
+        border-color: $hover-border
+    }
+
+    & :disabled, &.disabled{     // focus这个状态和focus这个类
+        color: $color;
+        background: $background;
+        border-color: $border
+    }
+}
