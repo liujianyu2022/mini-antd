@@ -1,12 +1,12 @@
 .btn {
     position: relative;
-    display: inline-block;
+    display: inline-block;          // 变为行内块元素
     font-weight: $btn-font-weight;
     line-height: $btn-line-height;
     color: $body-color;
     white-space: nowrap;        // 不换行
     text-align: center;     //控制文字或者img水平居中  left(默认) center right justify(两端对齐)
-    vertical-align: middle;
+    vertical-align: middle;     // 控制行内元素或者行内块元素，控制垂直方位
     background-image: none;
     border: $btn-border-width solid transparent;
 
