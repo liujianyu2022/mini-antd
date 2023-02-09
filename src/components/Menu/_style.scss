@@ -28,6 +28,30 @@
 
     .submenu-item{
         position: relative;
+        .submenu-title{
+            display: flex;
+            align-items: center;
+        }
+        .arrow-icon{
+            margin-left: 3px;
+            transition: transform 0.25s ease-in-out;        // 添加动画效果
+        }
+        &:hover{        // 当submenu被hover的时候，对图标进行旋转180°
+            .arrow-icon{
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .is-vertical{
+        .arrow-icon{
+            transform: rotate(0) !important;        // 把hover状态的旋转给覆盖掉
+        }
+    }
+    .is-vertical.is-open{
+        .arrow-icon{
+            transform: rotate(180deg) !important;        // 把hover状态的旋转给覆盖掉
+        }
     }
 
     .viking-submenu{

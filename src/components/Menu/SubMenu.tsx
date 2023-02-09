@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { MenuContext } from "./Menu";
+import Icon from "../Icon/Icon";
 
 export interface SubMenuProps {
     index?: string,
@@ -21,7 +22,9 @@ const SubMenu: React.FC<SubMenuProps> = (props)=>{
     
 
     let classes = classNames("menu-item submenu-item", className, {
-        "is-active": context.index === index
+        "is-active": context.index === index,
+        "is-open": menuOpen,
+        "is-vertical": context.mode === "vertical"
     })
 
     // 对于横向菜单，直接hover就能弹出子菜单
@@ -78,6 +81,7 @@ const SubMenu: React.FC<SubMenuProps> = (props)=>{
         <li className={classes} key={index} {...hoverEvents}>
             <div className="submenu-title" {...clickEvents}>
                 {title}
+                <Icon icon="angle-down" className="arrow-icon" />
             </div>
             {renderChildren()}
         </li>
